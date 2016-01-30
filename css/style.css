@@ -570,39 +570,25 @@ nav#footer p{
 	border-color: #FCAC45;
 	color: #ffffff;
 }
-
-@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
-/* written by riliwan balogun http://www.facebook.com/riliwan.rabo*/
-.board{
-    width: 75%;
-margin: 60px auto;
-height: 500px;
-background: #fff;
-/*box-shadow: 10px 10px #ccc,-10px 20px #ddd;*/
-}
-.board .nav-tabs {
-    position: relative;
-    /* border-bottom: 0; */
-    /* width: 80%; */
-    margin: 40px auto;
-    margin-bottom: 0;
-    box-sizing: border-box;
-
+.wizard {
+    margin: 20px auto;
+    background: #fff;
 }
 
-.board > div.board-inner{
-    background: #fafafa url(http://subtlepatterns.com/patterns/geometry2.png);
-    background-size: 30%;
-}
+    .wizard .nav-tabs {
+        position: relative;
+        margin: 40px auto;
+        margin-bottom: 0;
+        border-bottom-color: #e0e0e0;
+    }
 
-p.narrow{
-    width: 60%;
-    margin: 10px auto;
-}
+    .wizard > div.wizard-inner {
+        position: relative;
+    }
 
-.liner{
+.connecting-line {
     height: 2px;
-    background: #ddd;
+    background: #e0e0e0;
     position: absolute;
     width: 80%;
     margin: 0 auto;
@@ -612,187 +598,115 @@ p.narrow{
     z-index: 1;
 }
 
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+.wizard .nav-tabs > li.active > a, .wizard .nav-tabs > li.active > a:hover, .wizard .nav-tabs > li.active > a:focus {
     color: #555555;
     cursor: default;
-    /* background-color: #ffffff; */
     border: 0;
     border-bottom-color: transparent;
 }
 
-span.round-tabs{
+span.round-tab {
     width: 70px;
     height: 70px;
     line-height: 70px;
     display: inline-block;
     border-radius: 100px;
-    background: white;
+    background: #fff;
+    border: 2px solid #e0e0e0;
     z-index: 2;
     position: absolute;
     left: 0;
     text-align: center;
     font-size: 25px;
 }
-
-span.round-tabs.one{
-    color: rgb(34, 194, 34);border: 2px solid rgb(34, 194, 34);
+span.round-tab i{
+    color:#555555;
+}
+.wizard li.active span.round-tab {
+    background: #fff;
+    border: 2px solid #5bc0de;
+    
+}
+.wizard li.active span.round-tab i{
+    color: #5bc0de;
 }
 
-li.active span.round-tabs.one{
-    background: #fff !important;
-    border: 2px solid #ddd;
-    color: rgb(34, 194, 34);
+span.round-tab:hover {
+    color: #333;
+    border: 2px solid #333;
 }
 
-span.round-tabs.two{
-    color: #febe29;border: 2px solid #febe29;
+.wizard .nav-tabs > li {
+    width: 25%;
 }
 
-li.active span.round-tabs.two{
-    background: #fff !important;
-    border: 2px solid #ddd;
-    color: #febe29;
-}
-
-span.round-tabs.three{
-    color: #3e5e9a;border: 2px solid #3e5e9a;
-}
-
-li.active span.round-tabs.three{
-    background: #fff !important;
-    border: 2px solid #ddd;
-    color: #3e5e9a;
-}
-
-span.round-tabs.four{
-    color: #f1685e;border: 2px solid #f1685e;
-}
-
-li.active span.round-tabs.four{
-    background: #fff !important;
-    border: 2px solid #ddd;
-    color: #f1685e;
-}
-
-span.round-tabs.five{
-    color: #999;border: 2px solid #999;
-}
-
-li.active span.round-tabs.five{
-    background: #fff !important;
-    border: 2px solid #ddd;
-    color: #999;
-}
-
-.nav-tabs > li.active > a span.round-tabs{
-    background: #fafafa;
-}
-.nav-tabs > li {
-    width: 20%;
-}
-/*li.active:before {
+.wizard li:after {
     content: " ";
     position: absolute;
-    left: 45%;
-    opacity:0;
-    margin: 0 auto;
-    bottom: -2px;
-    border: 10px solid transparent;
-    border-bottom-color: #fff;
-    z-index: 1;
-    transition:0.2s ease-in-out;
-}*/
-li:after {
-    content: " ";
-    position: absolute;
-    left: 45%;
-   opacity:0;
+    left: 46%;
+    opacity: 0;
     margin: 0 auto;
     bottom: 0px;
     border: 5px solid transparent;
-    border-bottom-color: #ddd;
-    transition:0.1s ease-in-out;
-    
+    border-bottom-color: #5bc0de;
+    transition: 0.1s ease-in-out;
 }
-li.active:after {
+
+.wizard li.active:after {
     content: " ";
     position: absolute;
-    left: 45%;
-   opacity:1;
+    left: 46%;
+    opacity: 1;
     margin: 0 auto;
     bottom: 0px;
     border: 10px solid transparent;
-    border-bottom-color: #ddd;
-    
-}
-.nav-tabs > li a{
-   width: 70px;
-   height: 70px;
-   margin: 20px auto;
-   border-radius: 100%;
-   padding: 0;
+    border-bottom-color: #5bc0de;
 }
 
-.nav-tabs > li a:hover{
-    background: transparent;
+.wizard .nav-tabs > li a {
+    width: 70px;
+    height: 70px;
+    margin: 20px auto;
+    border-radius: 100%;
+    padding: 0;
 }
 
-.tab-content{
-}
-.tab-pane{
-   position: relative;
-padding-top: 50px;
-}
-.tab-content .head{
-    font-family: 'Roboto Condensed', sans-serif;
-    font-size: 25px;
-    text-transform: uppercase;
-    padding-bottom: 10px;
-}
-.btn-outline-rounded{
-    padding: 10px 40px;
-    margin: 20px 0;
-    border: 2px solid transparent;
-    border-radius: 25px;
-}
-
-.btn.green{
-    background-color:#5cb85c;
-    /*border: 2px solid #5cb85c;*/
-    color: #ffffff;
-}
-
-
-
-@media( max-width : 585px ){
-    
-    .board {
-width: 90%;
-height:auto !important;
-}
-    span.round-tabs {
-        font-size:16px;
-width: 50px;
-height: 50px;
-line-height: 50px;
+    .wizard .nav-tabs > li a:hover {
+        background: transparent;
     }
-    .tab-content .head{
-        font-size:20px;
-        }
-    .nav-tabs > li a {
-width: 50px;
-height: 50px;
-line-height:50px;
+
+.wizard .tab-pane {
+    position: relative;
+    padding-top: 50px;
 }
 
-li.active:after {
-content: " ";
-position: absolute;
-left: 35%;
+.wizard h3 {
+    margin-top: 0;
 }
 
-.btn-outline-rounded {
-    padding:12px 20px;
+@media( max-width : 585px ) {
+
+    .wizard {
+        width: 90%;
+        height: auto !important;
+    }
+
+    span.round-tab {
+        font-size: 16px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .wizard .nav-tabs > li a {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .wizard li.active:after {
+        content: " ";
+        position: absolute;
+        left: 35%;
     }
 }
-
