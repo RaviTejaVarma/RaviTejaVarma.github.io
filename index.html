@@ -23,6 +23,130 @@
         background-color: #e0e0e0;
     }
     </style>
+    
+    <style>
+.hiddenStepInfo {
+    display: none;
+}
+
+.activeStepInfo {
+    display: block !important;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.step {
+    margin-top: 27px;
+    text-align: center;
+}    
+
+.step .col-md-2 {
+    background-color: #fff;
+    border: 1px solid #C0C0C0;
+    border-right: none;
+}
+
+.step .col-md-2:last-child {
+    border: 1px solid #C0C0C0;
+}
+
+.step .col-md-2:first-child {
+    border-radius: 5px 0 0 5px;
+}
+
+.step .col-md-2:last-child {
+    border-radius: 0 5px 5px 0;
+}
+
+.step .col-md-2:hover {
+    color: #F58723;
+    cursor: pointer;
+}
+
+.step .activestep {
+    color: #F58723;
+    height: 100px;
+    margin-top: -7px;
+    padding-top: 7px;
+    border-left: 6px solid #5CB85C !important;
+    border-right: 6px solid #5CB85C !important;
+    border-top: 3px solid #5CB85C !important;
+    border-bottom: 3px solid #5CB85C !important;
+    vertical-align: central;
+}
+
+.step .fa {
+    padding-top: 15px;
+    font-size: 40px;
+}
+</style>
+
+<!-- you need to include the shieldui css and js assets in order for the components to work -->
+<link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light/all.min.css" />
+<script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+
+<script type="text/javascript">
+//initialization options for the progress bar
+var progress = $("#progress").shieldProgressBar({
+    min: 0,
+    max: 100,
+    value: 20,
+    layout: "circular",
+    layoutOptions: {
+        circular: {
+            borderColor: "#FF7900",
+            width: 17,
+            borderWidth: 3,
+            color: "#1E98E4",
+            backgroundColor: "transparent"
+        }
+    },
+    text: {
+        enabled: true,
+        template: '<span style="font-size:47px; color: #1E98E4">{0:n1}%</span>'
+    },
+}).swidget();
+
+
+function resetActive(event, percent, step) {
+    progress.value(percent);
+
+    $(".progress-bar").css("width", percent + "%").attr("aria-valuenow", percent);
+    $(".progress-completed").text(percent + "%");
+
+    $("div").each(function () {
+        if ($(this).hasClass("activestep")) {
+            $(this).removeClass("activestep");
+        }
+    });
+
+    if (event.target.className == "col-md-2") {
+        $(event.target).addClass("activestep");
+    }
+    else {
+        $(event.target.parentNode).addClass("activestep");
+    }
+
+    hideSteps();
+    showCurrentStepInfo(step);
+}
+
+function hideSteps() {
+    $("div").each(function () {
+        if ($(this).hasClass("activeStepInfo")) {
+            $(this).removeClass("activeStepInfo");
+            $(this).addClass("hiddenStepInfo");
+        }
+    });
+}
+
+function showCurrentStepInfo(step) {
+    var id = "#" + step;
+    $(id).addClass("activeStepInfo");
+}
+</script>
 
 
     <!-- Bootstrap -->
@@ -136,74 +260,103 @@
         </div>
     </div>
 
-    <div class="container" style="margin-bottom:100px">
-    <div class="text-center">
-    <h1>Process flow for Project</h1>
-    </div>
+    <div class="container" style="margin-top: 100px; margin-bottom: 100px;">
     <div class="row">
-        <section>
-        <div class="wizard">
-            <div class="wizard-inner">
-                <div class="connecting-line"></div>
-                <ul class="nav nav-tabs" role="tablist">
-
-                    <li role="presentation" class="active">
-                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
-                            <span class="round-tab">
-                                <i class="fa fa-bolt"></i>
-                            </span>
-                        </a>
-                    </li>
-
-                    <li role="presentation">
-                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
-                            <span class="round-tab">
-                                <i class="fa fa-exclamation"></i>
-                            </span>
-                        </a>
-                    </li>
-                    <li role="presentation">
-                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
-                            <span class="round-tab">
-                                <i class="fa fa-pencil-square-o"></i>
-                            </span>
-                        </a>
-                    </li>
-
-                    <li role="presentation">
-                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
-                            <span class="round-tab">
-                                <i class="fa fa-check-square-o"></i>
-                            </span>
-                        </a>
-                    </li>
-                </ul>
+        <div class="row step">
+            <div id="div1" class="col-md-2 activestep" onclick="javascript: resetActive(event, 0, 'step-1');">
+                <span class="fa fa-cloud-download"></span>
+                <p>Browse Advize</p>
+            </div>
+            <div class="col-md-2" onclick="javascript: resetActive(event, 20, 'step-2');">
+                <span class="fa fa-pencil"></span>
+                <p>Fill out</p>
+            </div>
+            <div class="col-md-2" onclick="javascript: resetActive(event, 40, 'step-3');">
+                <span class="fa fa-refresh"></span>
+                <p>Check</p>
+            </div>
+            <div class="col-md-2" onclick="javascript: resetActive(event, 60, 'step-4');">
+                <span class="fa fa-dollar"></span>
+                <p>Pay Fee</p>
+            </div>
+            <div class="col-md-2" onclick="javascript: resetActive(event, 80, 'step-5');">
+                <span class="fa fa-cloud-upload"></span>
+                <p>Submit Application</p>
+            </div>
+            <div id="last" class="col-md-2" onclick="javascript: resetActive(event, 100, 'step-6');">
+                <span class="fa fa-star"></span>
+                <p>Send Feedback</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-12 col-lg-12">
+        <div class="col-xs-4 col-md-3 col-lg-3 step">
+            <div id="progress" class="col-xs-12 col-md-4 col-lg-4" style="width: 190px; height: 190px;">
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-9 col-lg-9">
+            <div class="row setup-content step hiddenStepInfo" id="step-1">
+                <div class="col-xs-12">
+                    <div class="well text-center">
+                        <h1>STEP 1</h1>
+                        <h3 class="underline">Instructions</h3>
+                        Download the application form from our repository.
+                This may require logging in.
+                    </div>
+                </div>
+            </div>
+            <div class="row setup-content step activeStepInfo" id="step-2">
+                <div>
+                    <div class="well text-center">
+                        <h1>STEP 2</h1>
+                        <h3 class="underline">Instructions</h3>
+                        Fill out the application. 
+                Make sure to leave no empty fields. 
+                    </div>
+                </div>
+            </div>
+            <div class="row setup-content step hiddenStepInfo" id="step-3">
+                <div>
+                    <div class="well text-center">
+                        <h1>STEP 3</h1>
+                        <h3 class="underline">Instructions</h3>
+                        Check to ensure that all data entered is valid. 
+                    </div>
+                </div>
+            </div>
+            <div class="row setup-content step hiddenStepInfo" id="step-4">
+                <div>
+                    <div class="well text-center">
+                        <h1>STEP 4</h1>
+                        <h3 class="underline">Instructions</h3>
+                        Pay the application fee. 
+                This can be done either by entering your card details, or by using Paypal.
+                    </div>
+                </div>
+            </div>
+            <div class="row setup-content step hiddenStepInfo" id="step-5">
+                <div>
+                    <div class="well text-center">
+                        <h1>STEP 5</h1>
+                        <h3 class="underline">Instructions</h3>
+                        Upload the application. 
+                This may require a confirmation email.
+                    </div>
+                </div>
+            </div>
+            <div class="row setup-content step hiddenStepInfo" id="step-6">
+                <div>
+                    <div class="well text-center">
+                        <h1>STEP 6</h1>
+                        <h3 class="underline">Instructions</h3>
+                        Send us feedback on the overall process. 
+                This step is not obligatory.
+                    </div>
+                </div>
             </div>
 
-            <form role="form">
-                <div class="tab-content">
-                    <div class="tab-pane active text-center" role="tabpanel" id="step1">
-                        <h3>Beginning</h3>
-                        <p class="intro">Government uploads a Project in which the work force is required</p>
-                    </div>
-                    <div class="tab-pane text-center" role="tabpanel" id="step2">
-                        <h3>Notification</h3>
-                        <p class="intro">We spread the word to all users enrolled as Student / Job Seeker.</p>
-                    </div>
-                    <div class="tab-pane text-center" role="tabpanel" id="step3">
-                        <h3>Apply</h3>
-                        <p class="intro">Al the Users are allowed to give the required test and apply for Project.</p>
-                    </div>
-                    <div class="tab-pane text-center" role="tabpanel" id="complete">
-                        <h3>Selection</h3>
-                        <p class="intro">Concerned authorities will shortlist from the users applied to Project</p>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </form>
         </div>
-    </section>
-   </div>
+    </div>
 </div>
                    
 
