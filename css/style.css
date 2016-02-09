@@ -863,3 +863,12 @@ a:hover{
 i.red{
     color:#BC0213;
 }
+
+.services-wrap {
+	color: #707070;
+padding: 40px 30px;
+background: #fff;
+border-radius: 4px;
+box-shadow: 2px 5px 5px #808080;
+margin: 0 0 40px;
+}
