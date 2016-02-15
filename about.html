@@ -39,6 +39,7 @@
     ================================================== -->
     <link rel="stylesheet" type="text/css"  href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
 
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400' rel='stylesheet' type='text/css'>
@@ -75,9 +76,28 @@
     display: block;
     margin-top: 0; // remove the gap so it doesn't close
  }
- body{
-      background-color: #e8e8e8;
-   }
+ .padding{
+  padding: 65px 0;
+ }
+ .single-service {
+    overflow: hidden;
+    display: block;
+}
+.single-service h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #686868;
+}
+
+.single-service p {
+    padding: 0 48px;
+  }
+
+.scaleIn {
+  -webkit-animation-name: scaleIn;
+  animation-name: scaleIn;
+}
    
    </style>
   </head>
@@ -139,150 +159,71 @@
         </div>
     </div><!--background image -->
 
-
-    <div id="tf-about">
-        <div class="container">
-            <div class="row">
-                    <div class="about-text">
-                        <div class="section-title">
-                            <h2 class="text-center">Advantages of using Advize</h2>
+    <div class="container">
+    <div class="page-header text-center">
+        <h2>Why Advize ?</h2>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 text-center padding wow fadeIn animated" data-wow-duration="1000ms" data-wow-delay="300ms" style="visibility: visible; animation-duration: 1000ms; animation-delay: 300ms; animation-name: fadeIn;">
+                    <div class="single-service">
+                        <div class="wow scaleIn animated" data-wow-duration="500ms" data-wow-delay="300ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 300ms; animation-name: scaleIn;">
+                            <img src="img/png/signs.png" alt="">
                         </div>
-                        <p class="intro text-center">There are many features in Advize that cannot be found in any other product. Some of the main attractive points are</p><br>
-                        <!--ul class="about-list">
-                            <li>
-                                <span class="fa fa-dot-circle-o"></span>
-                                <strong>Marketplace</strong> - <em></em>
-                            </li>
-                            <li>
-                                <span class="fa fa-dot-circle-o"></span>
-                                <strong>Convenience on Execution</strong> - <em></em>
-                            </li>
-                            <li>
-                                <span class="fa fa-dot-circle-o"></span>
-                                <strong>Project Submission</strong> - <em></em>
-                            </li>
-                            <li>
-                                <span class="fa fa-dot-circle-o"></span>
-                                <strong>Project Financing</strong> - <em></em>
-                            </li><li>
-                                <span class="fa fa-dot-circle-o"></span>
-                                <strong>Project Tracking</strong> - <em></em>
-                            </li><li>
-                                <span class="fa fa-dot-circle-o"></span>
-                                <strong>Project Execution & Delivery</strong> - <em></em>
-                            </li><li>
-                                <span class="fa fa-dot-circle-o"></span>
-                                <strong>After support</strong> - <em></em>
-                            </li>
-                        </ul-->
-                      <div class="row">
-                      <div class="col-sm-6 col-md-4">
-                      <div class="media services-wrap wow fadeInDown animated" style="visibility: visible;">
-                      <div class="pull-left">
-                      <img class="img-responsive" src="img/network3.png">
-                      </div>
-                      <div class="media-body">
-                      <h3 class="media-heading">Marketplace</h3>
-                      <p>Lorem ipsum dolor sit ame consectetur adipisicing elit</p>
-                      </div>
-                      </div>
-                      </div>
-
-                      <div class="col-sm-6 col-md-4">
-                      <div class="media services-wrap wow fadeInDown animated" style="visibility: visible;">
-                      <div class="pull-left">
-                      <img class="img-responsive" src="img/smartphone54.png">
-                      </div>
-                      <div class="media-body">
-                      <h3 class="media-heading">Convenience on Execution</h3>
-                      <p>Lorem ipsum dolor sit ame consectetur adipisicing elit</p>
-                      </div>
-                      </div>
-                      </div>
-
-                      <div class="col-sm-6 col-md-4">
-                      <div class="media services-wrap wow fadeInDown animated" style="visibility: visible;">
-                      <div class="pull-left">
-                      <img class="img-responsive" src="img/done2.png">
-                      </div>
-                      <div class="media-body">
-                      <h3 class="media-heading">Project Submission</h3>
-                      <p>Lorem ipsum dolor sit ame consectetur adipisicing elit</p>
-                      </div>
-                      </div>
-                      </div>
-
-                      <div class="col-sm-6 col-md-4">
-                      <div class="media services-wrap wow fadeInDown animated" style="visibility: visible;">
-                      <div class="pull-left">
-                      <img class="img-responsive" src="img/currency-symbol.png">
-                      </div>
-                      <div class="media-body">
-                      <h3 class="media-heading">Project Financing</h3>
-                      <p>Lorem ipsum dolor sit ame consectetur adipisicing elit</p>
-                      </div>
-                      </div>
-                      </div>
-
-                      <div class="col-sm-6 col-md-4">
-                      <div class="media services-wrap wow fadeInDown animated" style="visibility: visible;">
-                      <div class="pull-left">
-                      <img class="img-responsive" src="img/clock136.png">
-                      </div>
-                      <div class="media-body">
-                      <h3 class="media-heading">Project Tracking</h3>
-                      <p>Lorem ipsum dolor sit ame consectetur adipisicing elit</p>
-                      </div>
-                      </div>
-                      </div>
-
-                      <div class="col-sm-6 col-md-4">
-                      <div class="media services-wrap wow fadeInDown animated" style="visibility: visible;">
-                      <div class="pull-left">
-                      <img class="img-responsive" src="img/businessman277.png">
-                      </div>
-                      <div class="media-body">
-                      <h3 class="media-heading">Project Execution</h3>
-                      <p>Lorem ipsum dolor sit ame consectetur adipisicing elit</p>
-                      </div>
-                      </div>
-                      </div>
-
-                      <div class="col-sm-6 col-md-4">
-                      <div class="media services-wrap wow fadeInDown animated" style="visibility: visible;">
-                      <div class="pull-left">
-                      <img class="img-responsive" src="img/computerscreen14.png">
-                      </div>
-                      <div class="media-body">
-                      <h3 class="media-heading">After Support</h3>
-                      <p>Lorem ipsum dolor sit ame consectetur adipisicing elit</p>
-                      </div>
-                      </div>
-                      </div>
-
-                      <div class="col-sm-6 col-md-4">
-                      <div class="media services-wrap wow fadeInDown animated" style="visibility: visible;">
-                      <div class="pull-left">
-                      <img class="img-responsive" src="img/airplane68.png">
-                      </div>
-                      <div class="media-body">
-                      <h3 class="media-heading">Delivery</h3>
-                      <p>Lorem ipsum dolor sit ame consectetur adipisicing elit</p>
-                      </div>
-                      </div>
-                      </div>
-                      </div>
+                        <h2>Marketplace</h2>
+                        <p>Ground round tenderloin flank shank ribeye. Hamkevin meatball swine. Cow shankle beef sirloin chicken ground round.</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+              
+            <div class="col-sm-4 text-center padding wow fadeIn animated" data-wow-duration="1000ms" data-wow-delay="600ms" style="visibility: visible; animation-duration: 1000ms; animation-delay: 600ms; animation-name: fadeIn;">
+                    <div class="single-service">
+                        <div class="wow scaleIn animated" data-wow-duration="500ms" data-wow-delay="600ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 600ms; animation-name: scaleIn;">
+                            <img src="img/png/hand.png" alt="">
+                        </div>
+                        <h2>Convenience on Execution</h2>
+                        <p>Ground round tenderloin flank shank ribeye. Hamkevin meatball swine. Cow shankle beef sirloin chicken ground round.</p>
+                    </div>
+                </div>
 
-<div class="container">
-<div class="row">
+                <div class="col-sm-4 text-center padding wow fadeIn animated" data-wow-duration="1000ms" data-wow-delay="900ms" style="visibility: visible; animation-duration: 1000ms; animation-delay: 900ms; animation-name: fadeIn;">
+                    <div class="single-service">
+                        <div class="wow scaleIn animated" data-wow-duration="500ms" data-wow-delay="900ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 900ms; animation-name: scaleIn;">
+                            <img src="img/png/security.png" alt="">
+                        </div>
+                        <h2>Project Submission</h2>
+                        <p>Ground round tenderloin flank shank ribeye. Hamkevin meatball swine. Cow shankle beef sirloin chicken ground round.</p>
+                    </div>
+                </div>
+             </div>
+        <div class="col-sm-4 text-center padding wow fadeIn animated" data-wow-duration="1000ms" data-wow-delay="300ms" style="visibility: visible; animation-duration: 1000ms; animation-delay: 300ms; animation-name: fadeIn;">
+                    <div class="single-service">
+                        <div class="wow scaleIn animated" data-wow-duration="500ms" data-wow-delay="300ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 300ms; animation-name: scaleIn;">
+                            <img src="img/png/people.png" alt="">
+                        </div>
+                        <h2>Project Financing</h2>
+                        <p>Ground round tenderloin flank shank ribeye. Hamkevin meatball swine. Cow shankle beef sirloin chicken ground round.</p>
+                    </div>
+                </div>
+              
+            <div class="col-sm-4 text-center padding wow fadeIn animated" data-wow-duration="1000ms" data-wow-delay="600ms" style="visibility: visible; animation-duration: 1000ms; animation-delay: 600ms; animation-name: fadeIn;">
+                    <div class="single-service">
+                        <div class="wow scaleIn animated" data-wow-duration="500ms" data-wow-delay="600ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 600ms; animation-name: scaleIn;">
+                            <img src="img/png/medical.png" alt="">
+                        </div>
+                        <h2>Project Tracking</h2>
+                        <p>Ground round tenderloin flank shank ribeye. Hamkevin meatball swine. Cow shankle beef sirloin chicken ground round.</p>
+                    </div>
+                </div>
 
-</div>
-</div>
+                <div class="col-sm-4 text-center padding wow fadeIn animated" data-wow-duration="1000ms" data-wow-delay="900ms" style="visibility: visible; animation-duration: 1000ms; animation-delay: 900ms; animation-name: fadeIn;">
+                    <div class="single-service">
+                        <div class="wow scaleIn animated" data-wow-duration="500ms" data-wow-delay="900ms" style="visibility: visible; animation-duration: 500ms; animation-delay: 900ms; animation-name: scaleIn;">
+                            <img src="img/png/people-1.png" alt="">
+                        </div>
+                        <h2>After Support</h2>
+                        <p>Ground round tenderloin flank shank ribeye. Hamkevin meatball swine. Cow shankle beef sirloin chicken ground round.</p>
+                    </div>
+                </div>
+             </div>
 
 
     <nav id="footer">
